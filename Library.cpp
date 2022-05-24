@@ -11,6 +11,8 @@ int main()
 
 {
 	int choice;
+	int bookN;
+	char next;
 	while (1)
 	{
 		system("cls");
@@ -22,7 +24,16 @@ int main()
 		//different choices output
 		if (choice == 1)
 		{
+			system("cls");
 			cout << "Odabrali ste prijavu ucenika\n" << endl;
+			cout << "Popis knjiga" << endl;//add folder
+			cout << "Odaberite broj knjige" << endl;
+			cin >> bookN;
+			cout << "Opis knjige" << endl;//add folder
+			cout << "Stisnite 'y' da nastavite" << endl;
+			cin >> next;
+			system("cls");
+
 		}
   }
 }
