@@ -10,8 +10,10 @@ using namespace std;
 int main()
 
 {
-	int choice;
+	int izbor;
 	int bookN;
+	string kime;
+	string kime8;
 	char next;
 	while (1)
 	{
@@ -20,20 +22,30 @@ int main()
 		cout << "1 Prijava ucenika" << endl;
 		cout << "2 Prijava profesora" << endl;
 		cout << "3 Prijava knjiznicara\n" << endl;
-		cin >> choice;
+		cin >> izbor;
 		//different choices output
-		if (choice == 1)
+		if (izbor == 1)
 		{
-			system("cls");
-			cout << "Odabrali ste prijavu ucenika\n" << endl;
-			cout << "Popis knjiga" << endl;//add folder
-			cout << "Odaberite broj knjige" << endl;
-			cin >> bookN;
-			cout << "Opis knjige" << endl;//add folder
-			cout << "Stisnite 'y' da nastavite" << endl;
-			cin >> next;
-			system("cls");
-			cout << "Unesite svoje Ime, Prezime" << endl;
+			fstream korisnik("korisnik.bin", ios::binary | ios::out);
+			cout << "Odabrali ste prijavu ucenika!" << endl;
+			cout << "Upisite korisnicko ime: ";
+			cin >> kime;
+			korisnik.write((char*)&kime, sizeof(kime));
+			korisnik.close();
+
 		}
+
+		
+		else if (izbor == 2)
+		{
+			break;
+		}
+		else
+		{
+			cout << "Krivi unos!" << endl;
+			break;
+		}
+		
   }
+	return 0;
 }
