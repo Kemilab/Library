@@ -33,7 +33,7 @@ int main()
 			cout << "Stisnite 'y' da nastavite" << endl;
 			cin >> next;
 			system("cls");
-
+			cout << "Unesite svoje Ime, Prezime" << endl;
 		}
   }
 }
