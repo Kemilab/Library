@@ -8,7 +8,12 @@
 using namespace std;
 
 int main()
+
 {
-   cout << "Hello World!\n";
-   cout << "Hello Salaj!\n";
+	while (1)
+	{
+		system("cls");
+		cout << "Dobrodosli u knjiznicu" << endl;
+		cout << "1. Prijava ucenika"
+  }
 }
