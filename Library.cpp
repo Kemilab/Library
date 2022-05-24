@@ -1,5 +1,9 @@
 
 #include <iostream>
+#include<stdio.h>
+#include<algorithm>
+#include<math.h>
+#include<fstream>
 
 using namespace std;
 
