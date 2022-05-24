@@ -10,10 +10,19 @@ using namespace std;
 int main()
 
 {
+	int choice;
 	while (1)
 	{
 		system("cls");
-		cout << "Dobrodosli u knjiznicu" << endl;
-		cout << "1. Prijava ucenika"
+		cout << "DOBRODOSLI U KNJIZNICU\n" << endl;
+		cout << "1 Prijava ucenika" << endl;
+		cout << "2 Prijava profesora" << endl;
+		cout << "3 Prijava knjiznicara\n" << endl;
+		cin >> choice;
+		//different choices output
+		if (choice == 1)
+		{
+			cout << "Odabrali ste prijavu ucenika\n" << endl;
+		}
   }
 }
