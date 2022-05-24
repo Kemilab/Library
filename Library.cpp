@@ -4,6 +4,8 @@
 #include<algorithm>
 #include<math.h>
 #include<fstream>
+#include <thread>
+#include <chrono>
 
 using namespace std;
 
@@ -12,8 +14,10 @@ int main()
 {
 	int izbor;
 	int bookN;
+	int flag;
 	string kime;
 	string kime8;
+	string knjiga;
 	char next;
 	while (1)
 	{
@@ -32,10 +36,24 @@ int main()
 			cin >> kime;
 			korisnik.write((char*)&kime, sizeof(kime));
 			korisnik.close();
+			korisnik.open("korisnik.bin", ios::binary | ios::out);
+			korisnik.read((char*)&kime, sizeof(kime));
+			korisnik >> kime;
+			cout << "Pozdrav!  " << kime << endl;
+			system("Pause");
+			cout << "Uèitavam dostupni popis knjiga" << endl;
+			//nekako uèitati knige iz datoteke
+			cout << "Upisite naziv knjige koje posudujete: ";
+			cin >> knjiga;
+			// kako da se sadržaj datoteke ne izbriše
+
+
+			
+			
+			
+
 
 		}
-
-		
 		else if (izbor == 2)
 		{
 			break;
