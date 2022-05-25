@@ -4,8 +4,6 @@
 #include<algorithm>
 #include<math.h>
 #include<fstream>
-#include <thread>
-#include <chrono>
 
 using namespace std;
 
@@ -41,11 +39,14 @@ int main()
 			korisnik >> kime;
 			cout << "Pozdrav!  " << kime << endl;
 			system("Pause");
-			cout << "Uèitavam dostupni popis knjiga" << endl;
-			//nekako uèitati knige iz datoteke
+			cout << "Ucitavam dostupni popis knjiga" << endl;
+			char popis[300] = "Mama \n Tata\n Deda\n";
+			fstream popisd("popis.bin", ios::binary | ios::out);
+			popisd.write((char*)&popis, sizeof(popis));
+
 			cout << "Upisite naziv knjige koje posudujete: ";
 			cin >> knjiga;
-			// kako da se sadržaj datoteke ne izbriše
+			// kako da se sadrzaj datoteke ne izbriše
 
 
 			
