@@ -12,7 +12,6 @@ int main()
 {
 	int izbor;
 	int bookN;
-	int flag;
 	string kime;
 	string kime8;
 	string knjiga;
@@ -34,24 +33,26 @@ int main()
 			cin >> kime;
 			korisnik.write((char*)&kime, sizeof(kime));
 			korisnik.close();
-			korisnik.open("korisnik.bin", ios::binary | ios::out);
+			korisnik.open("korisnik.bin", ios::binary | ios::in);
 			korisnik.read((char*)&kime, sizeof(kime));
 			korisnik >> kime;
+			korisnik.close();
 			cout << "Pozdrav!  " << kime << endl;
 			system("Pause");
 			cout << "Ucitavam dostupni popis knjiga" << endl;
-			char popis[300] = "Mama \n Tata\n Deda\n";
-			fstream popisd("popis.bin", ios::binary | ios::out);
-			popisd.write((char*)&popis, sizeof(popis));
-
+			cout << "\nMama je kriva za sve\n Pale sam na svijetu\n Kako si\n Putar i parizer\n Crvena voda\n " << endl;
 			cout << "Upisite naziv knjige koje posudujete: ";
 			cin >> knjiga;
+			korisnik.open("korisnik.bin", ios::binary | ios::app);
+			korisnik.write((char*)&knjiga, sizeof(knjiga));
+			korisnik.close();
+			system("pause");
 			// kako da se sadrzaj datoteke ne izbriše
 
 
-			
-			
-			
+
+
+
 
 
 		}
@@ -64,7 +65,7 @@ int main()
 			cout << "Krivi unos!" << endl;
 			break;
 		}
-		
-  }
+
+	}
 	return 0;
 }
