@@ -19,7 +19,9 @@ int main()
 	while (1)
 	{
 		system("cls");
-		cout << "DOBRODOSLI U KNJIZNICU\n" << endl;
+		cout << "---------------------------------------------------------------------------" << endl;
+ 		cout << "DOBRODOSLI U KNJIZNICU\n" << endl;
+ 		cout << "---------------------------------------------------------------------------" << endl;
 		cout << "1 Prijava ucenika" << endl;
 		cout << "2 Prijava profesora" << endl;
 		cout << "3 Prijava knjiznicara\n" << endl;
@@ -47,7 +49,6 @@ int main()
 			korisnik.write((char*)&knjiga, sizeof(knjiga));
 			korisnik.close();
 			system("pause");
-			// kako da se sadrzaj datoteke ne izbriše
 
 
 
