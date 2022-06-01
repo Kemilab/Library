@@ -94,21 +94,21 @@ int main()
             cin >> izborK;
             //Options for libraryan
             //Sign up
-            if(izborK==1)
+            if (izborK == 1)
             {
                 string KNJIZNICAR;
                 string PASSWORD;
 
-                cout<<"\nUNESITE SVOJE KORISNICKO IME:";
-                cin>>KNJIZNICAR;
-                cout<<"\nUNESITE SVOJU SIFRU:";
-                cin>>PASSWORD;
+                cout << "\nUNESITE SVOJE KORISNICKO IME:";
+                cin >> KNJIZNICAR;
+                cout << "\nUNESITE SVOJU SIFRU:";
+                cin >> PASSWORD;
                 system("cls");
                 cout << "1 Registracija" << endl;
                 cout << "2 Prijava" << endl;
             }
-                izborK = 0;
-                cin >> izborK;
+            izborK = 0;
+            cin >> izborK;
 
             //Sign in
             if (izborK == 2)
@@ -125,7 +125,7 @@ int main()
                 cin >> knjiznicar;
                 cout << "\n Upisite lozinku:";
                 cin >> Password;
-                if(Password == PASSWORD)
+                if (Password == PASSWORD)
                 {
                     admin();
                 }
