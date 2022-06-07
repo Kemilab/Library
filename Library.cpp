@@ -92,35 +92,84 @@ int main()
             korisnik.read((char*)&kime, sizeof(kime));
             korisnik >> kime;
             korisnik.close();
-            cout << "Pozdrav!  " << kime << endl;
+            cout << "Pozdrav  " << kime <<"!\n" << endl;
             system("Pause");
 
             //meni
+            int Uizbor;
+            system("cls");
+            cout << "\nOdaberite jednu od sljedecih opcija: " << endl;
+            cout << "1 Posudba knjige" << endl;
+            cout << "2 Povratak knjige" << endl;
+            cout << "3 Popis knjiga" << endl;
+            cout << "4 Izlaz" << endl;
+            cin >> Uizbor;
 
+            //borrow
+            if (Uizbor == 1)
+            {
+                system("cls");
+                cout << "Ucitavam dostupni popis knjiga\n" << endl;
+                datoteka.open("knjige.bin", ios::binary | ios::in);
+                datoteka.read((char*)&p1, sizeof(p1));
+                cout << p1 << endl;
+                datoteka.read((char*)&p2, sizeof(p2));
+                cout << p2 << endl;
+                datoteka.read((char*)&p3, sizeof(p3));
+                cout << p3 << endl;
+                datoteka.read((char*)&p4, sizeof(p4));
+                cout << p4 << endl;
+                datoteka.read((char*)&p5, sizeof(p5));
+                cout << p5 << endl;
+                datoteka.read((char*)&p6, sizeof(p6));
+                cout << p6 << endl;
+                datoteka.close();
 
+                cout << "\nUnesite ime knjige: " << endl;
+                /*getline(cin, knjiga);*/
+                korisnik.open("korisnik.bin", ios::binary | ios::app);
+                korisnik.write((char*)&knjiga, sizeof(knjiga));
+                korisnik.close();
+            }
 
+            //return
+            if (Uizbor == 2)
+            {
+                system("cls");
+                cout << "KNJIZNICARKO!" << endl;
+                system("Pause");
+                break;
+            }
 
+            //List of books
+            if (Uizbor == 3)
+            {
+                system("cls");
+                cout << "Ucitavam dostupni popis knjiga\n" << endl;
+                datoteka.open("knjige.bin", ios::binary | ios::in);
+                datoteka.read((char*)&p1, sizeof(p1));
+                cout << p1 << endl;
+                datoteka.read((char*)&p2, sizeof(p2));
+                cout << p2 << endl;
+                datoteka.read((char*)&p3, sizeof(p3));
+                cout << p3 << endl;
+                datoteka.read((char*)&p4, sizeof(p4));
+                cout << p4 << endl;
+                datoteka.read((char*)&p5, sizeof(p5));
+                cout << p5 << endl;
+                datoteka.read((char*)&p6, sizeof(p6));
+                cout << p6 << endl;
+                datoteka.close();
+                
+                system("Pause");
+                break;
+            }
 
-            cout << "Ucitavam dostupni popis knjiga\n" << endl;
-            datoteka.open("knjige.bin", ios::binary | ios::in);
-            datoteka.read((char*)&p1, sizeof(p1));
-            cout << p1 << endl;
-            datoteka.read((char*)&p2, sizeof(p2));
-            cout << p2 << endl;
-            datoteka.read((char*)&p3, sizeof(p3));
-            cout << p3 << endl;
-            datoteka.read((char*)&p4, sizeof(p4));
-            cout << p4 << endl;
-            datoteka.read((char*)&p5, sizeof(p5));
-            cout << p5 << endl;
-            datoteka.read((char*)&p6, sizeof(p6));
-            cout << p6 << endl;
-            datoteka.close();
-            cin >> knjiga;
-            korisnik.open("korisnik.bin", ios::binary | ios::app);
-            korisnik.write((char*)&knjiga, sizeof(knjiga));
-            korisnik.close();
-            system("pause");
+            //exit
+            if (Uizbor == 4)
+            {
+                break;
+            }
         }
 
         if (izbor == 2)
