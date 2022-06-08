@@ -1,7 +1,7 @@
 
 #include <iostream>
 #include<stdio.h>
-#include <string.h>
+#include <string>
 #include<algorithm>
 #include<math.h>
 #include<fstream>
@@ -68,7 +68,7 @@ int main()
     int izbor=1;
     string kime;
     string knjiga;
-    while (izbor != 3)
+    while (izbor !=3)
     {
         system("cls");
         cout << "---------------------------------------------------------------------------" << endl;
@@ -96,6 +96,7 @@ int main()
             system("Pause");
 
             //meni
+            while(Uizbor != 4)
             int Uizbor;
             system("cls");
             cout << "\nOdaberite jednu od sljedecih opcija: " << endl;
@@ -125,20 +126,25 @@ int main()
                 cout << p6 << endl;
                 datoteka.close();
 
+                korisnik.open("posudba.bin", ios::binary | ios::app);
                 cout << "\nUnesite ime knjige: " << endl;
-                /*getline(cin, knjiga);*/
-                korisnik.open("korisnik.bin", ios::binary | ios::app);
+                cin.ignore();
+                getline(cin, knjiga);
                 korisnik.write((char*)&knjiga, sizeof(knjiga));
                 korisnik.close();
+                //cout << knjiga;
+                continue;
             }
 
             //return
             if (Uizbor == 2)
             {
                 system("cls");
-                cout << "KNJIZNICARKO!" << endl;
+                korisnik.open("posudba.bin", ios::binary | ios::app);
+                korisnik.read((char*)&knjiga, sizeof(knjiga));
+                cout << knjiga;
                 system("Pause");
-                break;
+                continue;
             }
 
             //List of books
@@ -162,13 +168,13 @@ int main()
                 datoteka.close();
                 
                 system("Pause");
-                break;
+                continue;
             }
 
             //exit
             if (Uizbor == 4)
             {
-                break;
+                continue;
             }
         }
 
@@ -197,7 +203,7 @@ int main()
                 fstream datoteka("knjiznicar_prijava.bin", ios::binary | ios::out);
                 datoteka.write((char*)&PASSWORD, sizeof(PASSWORD));
                 datoteka.close();
-                cout << PASSWORD;
+                //PASSWORD se sprema
                 system("pause");
                 system("cls");
                 cout << "1 Registracija" << endl;
@@ -222,8 +228,7 @@ int main()
                     cin >> Password;
                     datoteka.open("knjiznicar_prijava.bin", ios::binary | ios::out);
                     datoteka.read((char*)&PASSWORD, sizeof(PASSWORD));
-                    pass = PASSWORD;
-                    cout << "EVO" << endl;
+                    
                     cout << PASSWORD;
                     int uspijeh = Password.compare(pass);
                     if (uspijeh == 0) {
@@ -243,11 +248,7 @@ int main()
             cout << "Pozdrav!" << endl;
             break;
         }
-        else
-        {
-            cout << "Krivi unos!" << endl;
-            break;
-        }
+       
         return 0;
     }
 
