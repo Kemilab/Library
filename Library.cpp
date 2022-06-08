@@ -12,13 +12,13 @@ void admin()
     int izbor = 0;
     while (izbor != 9)
     {
-        cout << "\n\n Admin Login is Successful !! Press any key to continue..";
-        cout << "\n1. Add Book";
-        cout << "\n2. Update Book";
-        cout << "\n3. Delete Book";
-        cout << "\n4. List of All Books";
-        cout << "\n9. Exit";
-        cout << "\n\n Enter your choice : ";
+        cout << "\n\n Prijava administratora je uspjesna !! Pritisnite bilo koju tipku da nastavite..";
+        cout << "\n1. Dodaj knjigu";
+        cout << "\n2. Azurirajte knjigu";
+        cout << "\n3. Izbrisite knjigu";
+        cout << "\n4. Lista svih knjiga";
+        cout << "\n9. Izlaz";
+        cout << "\n\n Unesite svoj odabir : ";
         cin >> izbor;
         switch (izbor)
         {
@@ -35,7 +35,7 @@ void admin()
             // listOfAllBooks();
             break;
         default:
-            cout << "\n\n Invalid Choice. Press any key to continue..";
+            cout << "\n\n Nevazeci izbor. Pritisnite bilo koju tipku da nastavite..";
             
         }
         system("cls");
