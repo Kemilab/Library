@@ -7,6 +7,8 @@
 #include<fstream>
 #include <chrono>
 #include <thread>
+#include <windows.h> // for sleep()
+
 
 using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; // nanoseconds, system_clock, seconds
@@ -83,7 +85,7 @@ int main()
         cout << "                       2 Prijava knjiznicara" << endl;
         cout << "                       3 Izlaz" << endl;
         cin >> izbor;
-
+        
         if (izbor == 1)
         {
             //student login
@@ -97,8 +99,42 @@ int main()
             korisnik.read((char*)&kime, sizeof(kime));
             korisnik >> kime;
             korisnik.close();
-            cout << "Pozdrav  " << kime <<"!\n" << endl;
-            system("Pause");
+            cout << "Pozdrav  " << kime << "!\n" << endl;
+            cout << '-' << flush;
+            for (;;) {
+                Sleep(100);
+                cout << "\b\\" << flush;
+                Sleep(100);
+                cout << "\b|" << flush;
+                Sleep(100);
+                cout << "\b/" << flush;
+                Sleep(100);
+                cout << "\b-" << flush;
+                cout << "\b\\" << flush;
+                Sleep(100);
+                cout << "\b|" << flush;
+                Sleep(100);
+                cout << "\b/" << flush;
+                Sleep(100);
+                cout << "\b-" << flush;
+                cout << "\b\\" << flush;
+                Sleep(100);
+                cout << "\b|" << flush;
+                Sleep(100);
+                cout << "\b/" << flush;
+                Sleep(100);
+                cout << "\b-" << flush;
+                cout << "\b\\" << flush;
+                Sleep(100);
+                cout << "\b|" << flush;
+                Sleep(100);
+                cout << "\b/" << flush;
+                Sleep(100);
+                cout << "\b-" << flush;
+                goto meni;
+                
+            }
+                    
 
             //meni
             meni:
@@ -216,7 +252,7 @@ int main()
                 cin >> KNJIZNICAR;
                 cout << "\nUNESITE SVOJU SIFRU:";
                 cin >> PASSWORD;
-                fstream datoteka("knjiznicar_prijava.bin", ios::binary | ios::out);
+                fstream datoteka("knjiznicar_prijava.bin", ios::binary | ios::app);
                 datoteka.write((char*)&PASSWORD, sizeof(PASSWORD));
                 datoteka.close();
                 //PASSWORD se sprema
