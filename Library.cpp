@@ -5,7 +5,11 @@
 #include<algorithm>
 #include<math.h>
 #include<fstream>
+#include <chrono>
+#include <thread>
 
+using namespace std::this_thread; // sleep_for, sleep_until
+using namespace std::chrono; // nanoseconds, system_clock, seconds
 using namespace std;
 void admin()
 {
@@ -66,6 +70,7 @@ int main()
     string Password;
     int bookN;
     int izbor=1;
+    int Uizbor = 1;
     string kime;
     string knjiga;
     while (izbor !=3)
@@ -96,8 +101,7 @@ int main()
             system("Pause");
 
             //meni
-            while(Uizbor != 4)
-            int Uizbor;
+            meni:
             system("cls");
             cout << "\nOdaberite jednu od sljedecih opcija: " << endl;
             cout << "1 Posudba knjige" << endl;
@@ -133,7 +137,20 @@ int main()
                 korisnik.write((char*)&knjiga, sizeof(knjiga));
                 korisnik.close();
                 //cout << knjiga;
-                continue;
+                korisnik.open("posudba.bin", ios::binary | ios::app);
+                korisnik.read((char*)&knjiga, sizeof(knjiga));
+                cout << "Upravo ste posudlil:", knjiga;
+                cout << "Molimo pricekajte: 5s" << endl;
+                sleep_for(seconds(1));
+                cout << "                   4s" << endl;
+                sleep_for(seconds(1));
+                cout << "                   3s" << endl;
+                sleep_for(seconds(1));
+                cout << "                   2s" << endl;
+                sleep_for(seconds(1));
+                cout << "                   1s" << endl;
+                sleep_for(seconds(1));
+                goto meni;
             }
 
             //return
@@ -144,7 +161,6 @@ int main()
                 korisnik.read((char*)&knjiga, sizeof(knjiga));
                 cout << knjiga;
                 system("Pause");
-                continue;
             }
 
             //List of books
@@ -174,7 +190,7 @@ int main()
             //exit
             if (Uizbor == 4)
             {
-                continue;
+                //continue;
             }
         }
 
