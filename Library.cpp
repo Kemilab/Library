@@ -103,8 +103,8 @@ int main() {
         cout << "                       DOBRODOSLI U KNJIZNICU\n" << endl;
         cout << "---------------------------------------------------------------------------" << endl;
         cout << "                       1 Prijava ucenika" << endl;
-        cout << "                       2 Prijava knjiznicara" << endl;
-        cout << "                       3 Prijava profesora" << endl;
+        cout << "                       2 Prijava profesora" << endl;
+        cout << "                       3 Prijava knjiznicara" << endl;
         cout << "                       4 prijava administratora" << endl;
         cout << "                       5 Izlaz" << endl;
         cin >> izbor;
@@ -189,7 +189,7 @@ int main() {
             cout << "2 Povratak knjige" << endl;
             cout << "3 Popis knjiga" << endl;
             cout << "4 Pregled posudenih knjiga" << endl; // nije implementirano
-            cout << "5 Izlaz" << endl; //nije implemntiranoi
+            cout << "5 Izlaz" << endl;
             cout << "\n";
             cout << "Unos: ";
             cin >> Uizbor;
@@ -301,7 +301,7 @@ int main() {
 
 
         //Lybrarian
-        if (izbor == 2)
+        if (izbor == 3)
         {
             int izborK;
             string KNJIZNICAR;
@@ -379,7 +379,7 @@ int main() {
             }
      
         }
-            if (izbor == 3)
+            if (izbor == 5)
             {
               cout << "Pozdrav!" << endl;
             }
