@@ -109,6 +109,9 @@ int main() {
         cout << "                       5 Izlaz" << endl;
         cin >> izbor;
 
+
+
+        //Student
         if (izbor == 1)
         {
             //student login
@@ -185,7 +188,7 @@ int main() {
             cout << "1 Posudba knjige" << endl;
             cout << "2 Povratak knjige" << endl;
             cout << "3 Popis knjiga" << endl;
-            cout << "4 Pregled posudenji knjiga" << endl; // nije implementirano
+            cout << "4 Pregled posudenih knjiga" << endl; // nije implementirano
             cout << "5 Izlaz" << endl; //nije implemntiranoi
             cout << "\n";
             cout << "Unos: ";
@@ -279,17 +282,25 @@ int main() {
                 cout << p6 << endl;
                 datoteka.close();
 
-                system("Pause");
-                continue;
+                cout << "\nUnesite Y za nastavak: ";
+                char Ulazy;
+                cin >> Ulazy;
+                if (Ulazy == 'y')
+                {
+                    goto meni;
+                }
             }
 
             //exit
-            if (Uizbor == 4)
+            if (Uizbor == 5)
             {
-                //continue;
+                continue;
             }
         }
 
+
+
+        //Lybrarian
         if (izbor == 2)
         {
             int izborK;
