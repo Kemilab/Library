@@ -187,6 +187,8 @@ int main() {
             cout << "3 Popis knjiga" << endl;
             cout << "4 Pregled posudenji knjiga" << endl; // nije implementirano
             cout << "5 Izlaz" << endl; //nije implemntiranoi
+            cout << "\n";
+            cout << "Unos: ";
             cin >> Uizbor;
 
             //borrow
@@ -237,21 +239,20 @@ int main() {
             //return
             if (Uizbor == 2)// NE RADI
             {
-                string y = "Y";
-                string x = "X";
-                string izbor;
+                char izbor;
                 system("cls");
                 korisnik.open("posudba.bin", ios::binary | ios::in);
                 korisnik.read((char*)&knjiga, sizeof(knjiga));
                 cout << "Trenutno je posudjena: " << knjiga << endl;
                 cout << "Zelite vratiti knjigu?" << endl;
                 cout << "Y/N" << endl;
-                getline(cin, izbor);
-                if (izbor == y )
+                cin.ignore();
+                cin >> izbor;
+                if (izbor == 'Y')
                 {
                     remove("posudba.bin");
                 }
-                else if (izbor == x) {
+                else if (izbor == 'X') {
                     cout << "Nista nije obrisano!";
                     sleep_for(seconds(1));
                     goto meni;
