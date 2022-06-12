@@ -107,14 +107,14 @@ int main() {
         cout << "                       3 Prijava knjiznicara" << endl;
         cout << "                       4 prijava administratora" << endl;
         cout << "                       5 Izlaz" << endl;
+        cout << "Odaberite opciju: ";
         cin >> izbor;
-
-
 
         //Student
         if (izbor == 1)
         {
             //student login
+            system("cls");
             fstream korisnik("korisnik.bin", ios::binary | ios::out); //fstream korisnik("korisnik.bin", ios::binary | ios::app | ios::out);
             cout << "Odabrali ste prijavu ucenika!" << endl;
             cout << "Upisite korisnicko ime: ";
@@ -216,7 +216,7 @@ int main() {
                 datoteka.close();
 
                 korisnik.open("posudba.bin", ios::binary | ios::app);
-                cout << "\nUnesite ime knjige: " << endl;
+                cout << "\nUnesite ime knjige: ";
                 cin.ignore();
                 getline(cin, knjiga);
                 korisnik.write((char*)&knjiga, sizeof(knjiga));
@@ -240,7 +240,7 @@ int main() {
             }
 
             //return
-            if (Uizbor == 2)// NE RADI
+            else if (Uizbor == 2)// NE RADI
             {
                 char izbor;
                 system("cls");
@@ -263,7 +263,7 @@ int main() {
             }
 
             //List of books
-            if (Uizbor == 3)
+            else if (Uizbor == 3)
             {
                 system("cls");
                 cout << "Ucitavam dostupni popis knjiga\n" << endl;
@@ -281,7 +281,6 @@ int main() {
                 datoteka.read((char*)&p6, sizeof(p6));
                 cout << p6 << endl;
                 datoteka.close();
-
                 cout << "\nUnesite Y za nastavak: ";
                 char Ulazy;
                 cin >> Ulazy;
@@ -290,12 +289,18 @@ int main() {
                     goto meni;
                 }
             }
+                else if (Uizbor == 4) {
+                cout << "Trenutno je posudeno: ";
+                 }
 
-            //exit
-            if (Uizbor == 5)
-            {
+                //exit
+                if (Uizbor == 5)
+                {
                 continue;
-            }
+                }
+                else {
+                    continue;
+                }
         }
 
 
