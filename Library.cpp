@@ -14,7 +14,7 @@ using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; // nanoseconds, system_clock, seconds
 using namespace std;
 
-void blokiran_racun()
+void blokiran_racun()//dodati oporavak baze tako da stvori datoteku za knjiznicara i da unese zadanu lozniku 1234 ili nešto
 {
    cout << "Vas racune je blokiran" << endl;
    cout << "Za sigurnost sustava Vasi podatci ce biti izbrisani" << endl;
@@ -247,19 +247,26 @@ int main() {
                 korisnik.open("posudba.bin", ios::binary | ios::in);
                 korisnik.read((char*)&knjiga, sizeof(knjiga));
                 cout << "Trenutno je posudjena: " << knjiga << endl;
-                cout << "Zelite vratiti knjigu?" << endl;
-                cout << "Y/N" << endl;
-                cin.ignore();
-                cin >> izbor;
-                if (izbor == 'Y')
+                cout << "Zelite vratiti knjigu? (Y/N)" << endl;
+                while (1)
                 {
-                    remove("posudba.bin");
+                    cin >> izbor;
+                    cout << "Upisali ste: " << izbor << "\n";
+                    sleep_for(seconds(2));
+                    izbor = tolower(izbor);
+                    if (izbor == 'y')
+                    {
+                        remove("posudba.bin");
+                        cout << "Knjiga je vracena :)" << endl;
+                        sleep_for(seconds(2));
+                        goto meni;
+                    }
+                    else {
+                        cout << "Povratak na izbornik";
+                        goto meni;
+                    }
                 }
-                else if (izbor == 'X') {
-                    cout << "Nista nije obrisano!";
-                    sleep_for(seconds(1));
-                    goto meni;
-                }
+             
             }
 
             //List of books
@@ -289,12 +296,18 @@ int main() {
                     goto meni;
                 }
             }
-                else if (Uizbor == 4) {
-                cout << "Trenutno je posudeno: ";
-                 }
+            else if (Uizbor == 4) {
+                korisnik.open("posudba.bin", ios::binary | ios::in);
+                korisnik.read((char*)&knjiga, (sizeof(knjiga)));
+                cout << "Trenutno je posudeno: " << knjiga << endl;
+                sleep_for(seconds(4));
+                goto meni;
+
+
+            }
 
                 //exit
-                if (Uizbor == 5)
+                else if (Uizbor == 5)
                 {
                 continue;
                 }
@@ -387,6 +400,7 @@ int main() {
             if (izbor == 5)
             {
               cout << "Pozdrav!" << endl;
+              exit(5);
             }
     }
 }
