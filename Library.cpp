@@ -14,8 +14,17 @@ using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; // nanoseconds, system_clock, seconds
 using namespace std;
 
+void dodaj_knjigu() {
+    fstream datoteka("knjige.bin", ios::binary | ios::app);
+    datoteka.open("knjige.bin", ios::binary | ios::app);
+    
+    
+
+}
+
 void blokiran_racun()//dodati oporavak baze tako da stvori datoteku za knjiznicara i da unese zadanu lozniku 1234 ili nešto
 {
+   system("cls");
    cout << "Vas racune je blokiran" << endl;
    cout << "Za sigurnost sustava Vasi podatci ce biti izbrisani" << endl;
    sleep_for(seconds(3));
@@ -31,17 +40,16 @@ void blokiran_racun()//dodati oporavak baze tako da stvori datoteku za knjiznica
        remove("knjige.bin");
        sleep_for(milliseconds(300));
    }
-
    system("cls");
    printf("\n");
-
+   cout << "Za nastavak pozovite administratora:";
 }
 void knjiz()
 {
     int izbor = 0;
     while (izbor != 9)
     {
-        cout << "\n\n Prijava administratora je uspjesna !! Pritisnite bilo koju tipku da nastavite..";
+        cout << "\n\n Prijava knjiznicara je uspjesna !!";
         cout << "\n1. Dodaj knjigu";
         cout << "\n2. Azurirajte knjigu";
         cout << "\n3. Izbrisite knjigu";
@@ -52,7 +60,7 @@ void knjiz()
         switch (izbor)
         {
         case 1:
-            //addBook();
+            dodaj_knjigu();
             break;
         case 2:
             //updateBook();
@@ -608,19 +616,29 @@ int main() {
             if (izborK == 1)
             {
                 //prijava knjiznicara
-                string KNJIZNICAR;
-                string PASSWORD;
-
-                cout << "\nUNESITE SVOJE KORISNICKO IME: ";
-                cin.ignore();
-                getline(cin, KNJIZNICAR);
-                cout << "\nUNESITE SVOJU SIFRU: ";
-                getline(cin, PASSWORD);
-                fstream datoteka("knjiznicar_prijava.bin", ios::binary | ios::out);
-                datoteka.write((char*)&PASSWORD, sizeof(PASSWORD));
-                datoteka.close();
+                ifstream datoteka;
+                datoteka.open("knjiznicar_prijava.bin");
+                    if (datoteka) {
+                        cout << "Datoteka vec postoji" << endl;
+                        cout << "\n";
+                        cout << "Vracanje na registraciju" << endl;
+                        sleep_for(seconds(1));
+                    }
+                    else {
+                        string KNJIZNICAR;
+                        string PASSWORD;
+                        cout << "\nUNESITE SVOJE KORISNICKO IME: ";
+                        cin.ignore();
+                        getline(cin, KNJIZNICAR);
+                        cout << "\nUNESITE SVOJU SIFRU: ";
+                        getline(cin, PASSWORD);
+                        fstream datoteka("knjiznicar_prijava.bin", ios::binary | ios::app);
+                        datoteka.write((char*)&PASSWORD, sizeof(PASSWORD));
+                        datoteka.close();
+                    }
                 //PASSWORD se sprema
-                cout << "PRIJAVA USPIJESNA"; // dodati zelenu boju
+                    cout << "\n";
+                cout << "REGISTRACIJA USPIJESNA"; // dodati zelenu boju
                 sleep_for(seconds(1));
                 system("cls");
                 cout << "1 Registracija" << endl;
