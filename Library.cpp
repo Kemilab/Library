@@ -185,6 +185,7 @@ int main() {
     int Uizbor = 0;
     string kime;
     string knjiga;
+    knjiga = '\0';
     while (izbor != 3)
     {
         system("cls");
@@ -398,18 +399,20 @@ int main() {
                 getline(cin, knjiga);
                 korisnik.write((char*)&knjiga, sizeof(knjiga));
                 korisnik.close();
+                knjiga = '\0';
                 korisnik.open("posudba.bin", ios::binary | ios::app);
                 korisnik.read((char*)&knjiga, sizeof(knjiga));
+                knjiga = '\0';
                 cout << "Upravo ste posudlil: " << knjiga << endl;
-                cout << "Molimo pricekajte: 5 sekundi" << endl;
+                cout << "Molimo pricekajte: 5 sekundi";//popravi ispis
                 sleep_for(seconds(1));
-                cout << "                   4 sekunde" << endl;
+                cout << "                   4 sekunde";
                 sleep_for(seconds(1));
-                cout << "                   3 sekunde" << endl;
+                cout << "                   3 sekunde";
                 sleep_for(seconds(1));
-                cout << "                   2 sekunde" << endl;
+                cout << "                   2 sekunde";
                 sleep_for(seconds(1));
-                cout << "                   1 sekunde" << endl;
+                cout << "                   1 sekunde";
                 sleep_for(seconds(1));
                  goto meni;
                 
@@ -419,6 +422,7 @@ int main() {
             //return
             else if (Uizbor == 2)// NE RADI
             {
+                knjiga = '\0';
                 char izbor;
                 system("cls");
                 korisnik.open("posudba.bin", ios::binary | ios::in);
@@ -434,13 +438,15 @@ int main() {
                     izbor = tolower(izbor);
                     if (izbor == 'y')
                     {
-                        korisnik.open("posudba.bin", ios::binary | ios::trunc);
+                        korisnik.open("posudba.bin", ios::binary | ios::out);
+                        korisnik.close();
                         cout << "Knjiga je vracena :)" << endl;
                         sleep_for(seconds(2));
                         goto meni;
                     }
                     else {
                         cout << "Povratak na izbornik";
+                        sleep_for(seconds(1));
                         goto meni;
                     }
                 }
@@ -566,7 +572,9 @@ int main() {
                 korisnik.open("posudba.bin", ios::binary | ios::in);
                 korisnik.read((char*)&knjiga, (sizeof(knjiga)));
                 cout << "Trenutno je posudeno: " << knjiga << endl;
-                sleep_for(seconds(4));
+                korisnik.close();
+                knjiga = '\0';
+                sleep_for(seconds(2));
                 goto meni;
 
 
