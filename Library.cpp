@@ -14,12 +14,232 @@ using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; // nanoseconds, system_clock, seconds
 using namespace std;
 
+void posudbe() {
+
+}
+
+void lista() {
+    fstream datoteka("knjige.bin", ios::binary | ios::out);
+
+    string p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50;
+    p1 = "1000 katastrofa";
+    p2 = "99 vrucih tragova";
+    p3 = "Crvena voda";
+    p4 = "Da Vincijev kod";
+    p5 = "Dr Dolittle";
+    p6 = "Duh u mocvari";
+    p7 = "Eko Eko";
+    p8 = "Europski rijecnik";
+    p9 = "Fahrenheit 451";
+    p10 = "Gegorov dnevnik";
+    p11 = "Gospodar prstenova : Dvije kule";
+    p12 = "Gospodar prstenova : Povratak kralja";
+    p13 = "Gospodar prstenova : Prstenova druzina";
+    p14 = "Gregorov dnevnik";
+    p15 = "Gung Ho";
+    p16 = "Harry Potter i Darovi smrti";
+    p17 = "Harry Potter i Kamen mudraca";
+    p18 = "Harry Potter i Odaja tajni";
+    p19 = "Harry Potter i Plameni pehar";
+    p20 = "Harry Potter i Princ miješane krvi";
+    p21 = "Harry Potter i Red feniksa";
+    p22 = "Harry Potter i Zatoceni Azkabana";
+    p23 = "Hotel Zagorje";
+    p24 = "Imperij";
+    p25 = "IT";
+    p26 = "Kako si";
+    p27 = "Knjiga svijeta";
+    p28 = "Koko I duhovi";
+    p29 = "Marvel i ostala cudesa";
+    p30 = "Moze jos";
+    p31 = "Narnija";
+    p32 = "Nora";
+    p33 = "Pale sam na svijetu";
+    p34 = "Pale sam na svijetu";
+    p35 = "Petar Pan";
+    p36 = "Point Blank";
+    p37 = "Poirot";
+    p38 = "Posljednji Stipancici";
+    p39 = "Putar I parizer";
+    p40 = "Star Wars : Gospodari Sitha";
+    p41 = "Star Wars : Krvna linija";
+    p42 = "Star Wars : Nasljednik carstva";
+    p43 = "Star Wars : Pala zvijezda";
+    p44 = "Star Wars : Tarkin";
+    p45 = "Star Wars : Thrawn";
+    p46 = "Susjed";
+    p47 = "Tisucu tragova";
+    p48 = "Velike bitke II.svjetskog rata";
+    p49 = "Zagonetni djecak";
+    p50 = "Zivotinjska farma";
+    datoteka.write((char*)&p1, sizeof(p1));
+    datoteka.write((char*)&p2, sizeof(p2));
+    datoteka.write((char*)&p3, sizeof(p3));
+    datoteka.write((char*)&p4, sizeof(p4));
+    datoteka.write((char*)&p5, sizeof(p5));
+    datoteka.write((char*)&p6, sizeof(p6));
+    datoteka.write((char*)&p7, sizeof(p7));
+    datoteka.write((char*)&p8, sizeof(p8));
+    datoteka.write((char*)&p9, sizeof(p9));
+    datoteka.write((char*)&p10, sizeof(p10));
+    datoteka.write((char*)&p11, sizeof(p11));
+    datoteka.write((char*)&p12, sizeof(p12));
+    datoteka.write((char*)&p13, sizeof(p13));
+    datoteka.write((char*)&p14, sizeof(p14));
+    datoteka.write((char*)&p15, sizeof(p15));
+    datoteka.write((char*)&p16, sizeof(p16));
+    datoteka.write((char*)&p17, sizeof(p17));
+    datoteka.write((char*)&p18, sizeof(p18));
+    datoteka.write((char*)&p19, sizeof(p19));
+    datoteka.write((char*)&p20, sizeof(p20));
+    datoteka.write((char*)&p21, sizeof(p21));
+    datoteka.write((char*)&p22, sizeof(p22));
+    datoteka.write((char*)&p23, sizeof(p23));
+    datoteka.write((char*)&p24, sizeof(p24));
+    datoteka.write((char*)&p25, sizeof(p25));
+    datoteka.write((char*)&p26, sizeof(p26));
+    datoteka.write((char*)&p27, sizeof(p27));
+    datoteka.write((char*)&p28, sizeof(p28));
+    datoteka.write((char*)&p29, sizeof(p29));
+    datoteka.write((char*)&p30, sizeof(p30));
+    datoteka.write((char*)&p31, sizeof(p31));
+    datoteka.write((char*)&p32, sizeof(p32));
+    datoteka.write((char*)&p33, sizeof(p33));
+    datoteka.write((char*)&p34, sizeof(p34));
+    datoteka.write((char*)&p35, sizeof(p35));
+    datoteka.write((char*)&p36, sizeof(p36));
+    datoteka.write((char*)&p37, sizeof(p37));
+    datoteka.write((char*)&p38, sizeof(p38));
+    datoteka.write((char*)&p39, sizeof(p39));
+    datoteka.write((char*)&p40, sizeof(p40));
+    datoteka.write((char*)&p41, sizeof(p41));
+    datoteka.write((char*)&p42, sizeof(p42));
+    datoteka.write((char*)&p43, sizeof(p43));
+    datoteka.write((char*)&p44, sizeof(p44));
+    datoteka.write((char*)&p45, sizeof(p45));
+    datoteka.write((char*)&p46, sizeof(p46));
+    datoteka.write((char*)&p47, sizeof(p47));
+    datoteka.write((char*)&p48, sizeof(p48));
+    datoteka.write((char*)&p49, sizeof(p49));
+    datoteka.write((char*)&p50, sizeof(p50));
+    datoteka.close();
+
+    cout << "Ucitavam dostupni popis knjiga\n" << endl;
+    datoteka.open("knjige.bin", ios::binary | ios::in);
+    datoteka.read((char*)&p1, sizeof(p1));
+    cout << p1 << endl;
+    datoteka.read((char*)&p2, sizeof(p2));
+    cout << p2 << endl;
+    datoteka.read((char*)&p3, sizeof(p3));
+    cout << p3 << endl;
+    datoteka.read((char*)&p4, sizeof(p4));
+    cout << p4 << endl;
+    datoteka.read((char*)&p5, sizeof(p5));
+    cout << p5 << endl;
+    datoteka.read((char*)&p6, sizeof(p6));
+    cout << p6 << endl;
+    datoteka.read((char*)&p7, sizeof(p7));
+    cout << p7 << endl;
+    datoteka.read((char*)&p8, sizeof(p8));
+    cout << p8 << endl;
+    datoteka.read((char*)&p9, sizeof(p9));
+    cout << p9 << endl;
+    datoteka.read((char*)&p10, sizeof(p10));
+    cout << p10 << endl;
+    datoteka.read((char*)&p11, sizeof(p11));
+    cout << p11 << endl;
+    datoteka.read((char*)&p12, sizeof(p12));
+    cout << p12 << endl;
+    datoteka.read((char*)&p13, sizeof(p13));
+    cout << p13 << endl;
+    datoteka.read((char*)&p14, sizeof(p14));
+    cout << p14 << endl;
+    datoteka.read((char*)&p15, sizeof(p15));
+    cout << p15 << endl;
+    datoteka.read((char*)&p16, sizeof(p16));
+    cout << p16 << endl;
+    datoteka.read((char*)&p17, sizeof(p17));
+    cout << p17 << endl;
+    datoteka.read((char*)&p18, sizeof(p18));
+    cout << p18 << endl;
+    datoteka.read((char*)&p19, sizeof(p19));
+    cout << p19 << endl;
+    datoteka.read((char*)&p20, sizeof(p20));
+    cout << p20 << endl;
+    datoteka.read((char*)&p21, sizeof(p21));
+    cout << p21 << endl;
+    datoteka.read((char*)&p22, sizeof(p22));
+    cout << p22 << endl;
+    datoteka.read((char*)&p23, sizeof(p23));
+    cout << p23 << endl;
+    datoteka.read((char*)&p24, sizeof(p24));
+    cout << p24 << endl;
+    datoteka.read((char*)&p25, sizeof(p25));
+    cout << p25 << endl;
+    datoteka.read((char*)&p26, sizeof(p26));
+    cout << p26 << endl;
+    datoteka.read((char*)&p27, sizeof(p27));
+    cout << p27 << endl;
+    datoteka.read((char*)&p28, sizeof(p28));
+    cout << p28 << endl;
+    datoteka.read((char*)&p29, sizeof(p29));
+    cout << p29 << endl;
+    datoteka.read((char*)&p30, sizeof(p30));
+    cout << p30 << endl;
+    datoteka.read((char*)&p31, sizeof(p31));
+    cout << p31 << endl;
+    datoteka.read((char*)&p32, sizeof(p32));
+    cout << p32 << endl;
+    datoteka.read((char*)&p33, sizeof(p33));
+    cout << p33 << endl;
+    datoteka.read((char*)&p34, sizeof(p34));
+    cout << p34 << endl;
+    datoteka.read((char*)&p35, sizeof(p35));
+    cout << p35 << endl;
+    datoteka.read((char*)&p36, sizeof(p36));
+    cout << p36 << endl;
+    datoteka.read((char*)&p37, sizeof(p37));
+    cout << p37 << endl;
+    datoteka.read((char*)&p38, sizeof(p38));
+    cout << p38 << endl;
+    datoteka.read((char*)&p39, sizeof(p39));
+    cout << p39 << endl;
+    datoteka.read((char*)&p40, sizeof(p40));
+    cout << p40 << endl;
+    datoteka.read((char*)&p41, sizeof(p41));
+    cout << p41 << endl;
+    datoteka.read((char*)&p42, sizeof(p42));
+    cout << p42 << endl;
+    datoteka.read((char*)&p43, sizeof(p43));
+    cout << p43 << endl;
+    datoteka.read((char*)&p44, sizeof(p44));
+    cout << p44 << endl;
+    datoteka.read((char*)&p45, sizeof(p45));
+    cout << p45 << endl;
+    datoteka.read((char*)&p46, sizeof(p46));
+    cout << p46 << endl;
+    datoteka.read((char*)&p47, sizeof(p47));
+    cout << p47 << endl;
+    datoteka.read((char*)&p48, sizeof(p48));
+    cout << p48 << endl;
+    datoteka.read((char*)&p49, sizeof(p49));
+    cout << p49 << endl;
+    datoteka.read((char*)&p50, sizeof(p50));
+    cout << p50 << endl;
+    datoteka.close();
+    system("pause");
+
+}
+
 void dodaj_knjigu() {
+    string knjiga;
     fstream datoteka("knjige.bin", ios::binary | ios::app);
     datoteka.open("knjige.bin", ios::binary | ios::app);
-    
-    
-
+    cout << "\nUnesite ime knjige: ";
+    cin.ignore();
+    getline(cin, knjiga);
+    datoteka.write((char*)&knjiga, sizeof(knjiga));
+    datoteka.close();
 }
 
 void blokiran_racun()//dodati oporavak baze tako da stvori datoteku za knjiznicara i da unese zadanu lozniku 1234 ili nešto
@@ -60,10 +280,10 @@ void knjiz()
         switch (izbor)
         {
         case 1:
-            dodaj_knjigu();
+            dodaj_knjigu(); //radi ali ne ispisuje, koga boli briga
             break;
         case 2:
-            //updateBook();
+            lista();
             break;
         case 3:
             //deleteBook();
@@ -185,7 +405,6 @@ int main() {
     datoteka.write((char*)&p49, sizeof(p49));
     datoteka.write((char*)&p50, sizeof(p50));
     datoteka.close();
-    cout << p1 << endl;
     string knjiznicar;
     string Password;
     int bookN;
