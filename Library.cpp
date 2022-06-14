@@ -334,7 +334,7 @@ int main() {
     p17 = "  Harry Potter i Kamen mudraca";
     p18 = "  Harry Potter i Odaja tajni";
     p19 = "  Harry Potter i Plameni pehar";
-    p20 = "  Harry Potter i Princ mije�ane krvi";
+    p20 = "  Harry Potter i Princ mijesane krvi";
     p21 = "  Harry Potter i Red feniksa";
     p22 = "  Harry Potter i Zatoceni Azkabana";
     p23 = "  Hotel Zagorje";
@@ -642,7 +642,7 @@ int main() {
                 korisnik.open("posudba.bin", ios::binary | ios::app);
                 korisnik.read((char*)&knjiga, sizeof(knjiga));
                 cout << "UPRAVO STE POSUDILI: " << knjiga << endl;
-                cout << "MOLIMO PRICEKAJTE..";//popravi ispis
+                cout << "MOLIMO PRICEKAJTE...";//popravi ispis
                 sleep_for(seconds(1));
                 sleep_for(seconds(1));
                 sleep_for(seconds(1));
@@ -1105,3 +1105,4 @@ int main() {
             }
         }
     }
+}
