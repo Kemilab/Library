@@ -661,7 +661,7 @@ int main() {
                 knjiga = '\0';
                 char izbor;
                 system("cls");
-                korisnik.open("posudba.bin", ios::binary | ios::in);
+                korisnik.open("posudba.bin", ios::binary | ios::app | ios::in);
                 korisnik.read((char*)&knjiga, sizeof(knjiga));
                 cout << "Trenutno je posudjena: " << knjiga << endl;
                 cout << "Zelite vratiti knjigu? (Y/N)" << endl;
@@ -806,7 +806,7 @@ int main() {
                 }
             }
             else if (Uizbor == 4) {
-                korisnik.open("posudba.bin", ios::binary | ios::out);
+                korisnik.open("posudba.bin", ios::binary | ios::app);
                 korisnik.read((char*)&knjiga, (sizeof(knjiga)));
                 cout << "TRENUTNO JE POSUDZENO: " << knjiga << endl;
                 korisnik.close();
@@ -822,8 +822,13 @@ int main() {
                 {
                 continue;
                 }
-                else {
-                    continue;
+                
+                else if (Uizbor == 6){
+                    
+                korisnik.open("korisnik.bin", ios::binary | ios::in);
+                korisnik.read((char*)&kime, sizeof(kime);
+                cout << kime;
+
                 }
         }
 
