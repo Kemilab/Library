@@ -15,15 +15,17 @@ using namespace std::chrono; // nanoseconds, system_clock, seconds
 using namespace std;
 
 void posudbe() {
+    string kime;
+    string knjiga;
     fstream korisnik("posudba.bin", ios::binary | ios::app);
-    fstream korisnik("korisnik.bin", ios::binary | ios::app);
-    korisnik.open("korisnik.bin", ios::binary | ios::app);
-    korisnik.read((char*)&kime, sizeof(kime));
+    fstream datoteka("korisnik.bin", ios::binary | ios::app);
+    datoteka.open("korisnik.bin", ios::binary | ios::app);
+    datoteka.read((char*)&kime, sizeof(kime));
     korisnik.open("posudba.bin", ios::binary | ios::app);
     cout << "Ucenik " << kime << " je posduio " << knjiga;
     sleep_for(seconds(2));
     korisnik.close();
-    korisnik.close();
+    datoteka.close();
    
 
 }
@@ -297,7 +299,7 @@ void knjiz()
             lista();
             break;
         case 3:
-            //deleteBook();
+            posudbe();
             break;
         case 4:
             // listOfAllBooks();
