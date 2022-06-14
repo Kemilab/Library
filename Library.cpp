@@ -806,7 +806,7 @@ int main() {
             else if (Uizbor == 4) {
                 korisnik.open("posudba.bin", ios::binary | ios::out);
                 korisnik.read((char*)&knjiga, (sizeof(knjiga)));
-                cout << "TRENUTNO JE POSUDZENO: " << knjiga << endl;
+                cout << "TRENUTNO JE POSUDENO: " << knjiga << endl;
                 korisnik.close();
                 //knjiga = '\0';
                 sleep_for(seconds(2));
@@ -923,6 +923,8 @@ int main() {
             }
         }
 
+
+        //admin
         if (izbor == 3)
         {
             int izborK;
@@ -1045,57 +1047,59 @@ int main() {
             }
 
 
-            //admin
-            if (izbor == 4) {
-            admin:
-                int pokusaj = 0;
-                ifstream datoteka;
-                datoteka.open("knjiznicar_prijava.bin");
-                if (datoteka) {
-                    cout << "DATOTEKA VEC POSTOJI" << endl;
-                    cout << "\n";
-                    cout << "VRACANJE NA POCETNI ZASLON" << endl;
-                    sleep_for(seconds(1));
-                    goto pocetak;
-                }
-                else {
-                    string admin = "Ott3r";
-                    string pass;
-                    cout << "PRIJAVA ADMINISTRATORA" << endl;
-                    cout << "UPISITE LOZINKU: ";
-                    cin.ignore();
-                    getline(cin, pass);
-                    if (admin == pass) {
-                        cout << "VRACAM PODATKE" << endl;
-                        sleep_for(seconds(2));
-                        int i = 0;
-                        char load[26];
-                        while (i < 25)
-                        {
-                            system("cls");
-                            load[i++] = '#';
-                            load[i] = '\0';
+           }
 
-                            printf("\n\nBRISANJE [%-25s]", load);
-                            remove("knjige.bin");
-                            sleep_for(milliseconds(100));
-                        }
-                        system("cls");
-                        printf("\n");
-                        fstream datoteka("knjiznicar_prijava.bin", ios::binary | ios::app);
-                        datoteka.close();
-                    }
-                    else if (admin != pass) {
-                        cout << "KRIVI KORISNICKI PODATCI!" << endl;
-                        pokusaj++;
-                        cout << "\n";
-                        cout << "BROJ POKUSAJA " << pokusaj << " OD MOGUCIH 3" << endl;
-                        sleep_for(seconds(3));
-                        datoteka.close();
-                    }
+           //admin
+           if (izbor == 4) {
+           admin:
+               int pokusaj = 0;
+               ifstream datoteka;
+               datoteka.open("knjiznicar_prijava.bin");
+               if (datoteka) {
+                   cout << "DATOTEKA VEC POSTOJI" << endl;
+                   cout << "\n";
+                   cout << "VRACANJE NA POCETNI ZASLON" << endl;
+                   sleep_for(seconds(1));
+                   goto pocetak;
+               }
+               else {
+                   string admin = "Ott3r";
+                   string pass;
+                   cout << "PRIJAVA ADMINISTRATORA" << endl;
+                   cout << "UPISITE LOZINKU: ";
+                   cin.ignore();
+                   getline(cin, pass);
+                   if (admin == pass) {
+                       cout << "VRACAM PODATKE" << endl;
+                       sleep_for(seconds(2));
+                       int i = 0;
+                       char load[26];
+                       while (i < 25)
+                       {
+                           system("cls");
+                           load[i++] = '#';
+                           load[i] = '\0';
 
-                }
-            }
+                           printf("\n\nBRISANJE [%-25s]", load);
+                           remove("knjige.bin");
+                           sleep_for(milliseconds(100));
+                       }
+                       system("cls");
+                       printf("\n");
+                       fstream datoteka("knjiznicar_prijava.bin", ios::binary | ios::app);
+                       datoteka.close();
+                   }
+                   else if (admin != pass) {
+                       cout << "KRIVI KORISNICKI PODATCI!" << endl;
+                       pokusaj++;
+                       cout << "\n";
+                       cout << "BROJ POKUSAJA " << pokusaj << " OD MOGUCIH 3" << endl;
+                       sleep_for(seconds(3));
+                       datoteka.close();
+                   }
+
+               }
+
 
             //izlaz
             if (izbor == 5)
