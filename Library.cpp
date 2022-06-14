@@ -15,6 +15,16 @@ using namespace std::chrono; // nanoseconds, system_clock, seconds
 using namespace std;
 
 void posudbe() {
+    fstream korisnik("posudba.bin", ios::binary | ios::app);
+    fstream korisnik("korisnik.bin", ios::binary | ios::app);
+    korisnik.open("korisnik.bin", ios::binary | ios::app);
+    korisnik.read((char*)&kime, sizeof(kime));
+    korisnik.open("posudba.bin", ios::binary | ios::app);
+    cout << "Ucenik " << kime << " je posduio " << knjiga;
+    sleep_for(seconds(2));
+    korisnik.close();
+    korisnik.close();sss
+    goto k_meni;
 
 }
 
@@ -269,6 +279,7 @@ void knjiz()
     int izbor = 0;
     while (izbor != 9)
     {
+        k_meni:
         cout << "\n\n Prijava knjiznicara je uspjesna !!";
         cout << "\n1. Dodaj knjigu";
         cout << "\n2. Azurirajte knjigu";
