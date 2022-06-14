@@ -13,6 +13,30 @@ using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; // nanoseconds, system_clock, seconds
 using namespace std;
 
+void blokiran_racun()//dodati oporavak baze tako da stvori datoteku za knjiznicara i da unese zadanu lozniku 1234 ili nesto
+{
+    system("cls");
+    cout << "VAS RACUN JE BLOKIRAN" << endl;
+    cout << "ZA SIGURNOST SUSTAVA VASI PODATCI CE BITI IZBRISANI" << endl;
+    sleep_for(seconds(3));
+    int i = 0;
+    char load[26];
+    while (i < 25)
+    {
+        system("cls");
+        load[i++] = '#';
+        load[i] = '\0';
+
+        printf("\n\nBRISANJE [%-25s]", load);
+        remove("knjige.bin");
+        sleep_for(milliseconds(300));
+    }
+    system("cls");
+    printf("\n");
+    cout << "ZA NASTAVAK POZOVITE ADMINISTRATORA:";
+}
+
+
 void posudbe() {
     string kime;
     string knjiga;
@@ -253,27 +277,37 @@ void dodaj_knjigu() {
     datoteka.close();
 }
 
-void blokiran_racun()//dodati oporavak baze tako da stvori datoteku za knjiznicara i da unese zadanu lozniku 1234 ili nesto
+void knjiz()
 {
-    system("cls");
-    cout << "VAS RACUN JE BLOKIRAN" << endl;
-    cout << "ZA SIGURNOST SUSTAVA VASI PODATCI CE BITI IZBRISANI" << endl;
-    sleep_for(seconds(3));
-    int i = 0;
-    char load[26];
-    while (i < 25)
+    int izbor = 0;
+    while (izbor != 9)
     {
-        system("cls");
-        load[i++] = '#';
-        load[i] = '\0';
+        cout << "\n\n ---------- PRIJAVA KNJIZNICARA JE USPJESNA ----------";
+        cout << "\n1. Dodaj knjigu";
+        cout << "\n2. Prikaz svih knjiga";
+        cout << "\n3. Prikaz posudba";
+        cout << "\n4. Izlaz";
+        cout << "\n\n Unesite svoj odabir : ";
+        cin >> izbor;
+        switch (izbor)
+        {
+        case 1:
+            dodaj_knjigu();
+            break;
+        case 2:
+            lista();
+            break;
+        case 3:
+            posudbe();
+            break;
+        case 4:
+            exit(4);
+        default:
+            cout << "\n\n NEVAZECI IZBOR. PRITISNITE BILO KOJU TIPKU DA NASTAVITE..";
 
-        printf("\n\nBRISANJE [%-25s]", load);
-        remove("knjige.bin");
-        sleep_for(milliseconds(300));
+        }
+        system("cls");
     }
-    system("cls");
-    printf("\n");
-    cout << "ZA NASTAVAK POZOVITE ADMINISTRATORA:";
 }
 
 int main() {
@@ -392,7 +426,7 @@ int main() {
     knjiga = '\0';
     while (izbor != 5)
     {
-        pocetak:
+    pocetak:
         system("cls");
         cout << "---------------------------------------------------------------------------" << endl;
         cout << "                       DOBRODOSLI U KNJIZNICU\n" << endl;
@@ -618,7 +652,7 @@ int main() {
             }
 
             //return
-            else if (Uizbor == 2)// NE RADI
+            else if (Uizbor == 2)
             {
                 knjiga = '\0';
                 char izbor;
@@ -787,7 +821,7 @@ int main() {
                 continue;
             }
             else {
-            continue;
+                continue;
             }
         }
 
@@ -889,7 +923,6 @@ int main() {
             }
         }
 
-        //Lybrarian
         if (izbor == 3)
         {
             int izborK;
@@ -915,7 +948,7 @@ int main() {
                     sleep_for(seconds(1));
                 }
                 else {
-                    regk:
+                regk:
                     string KNJIZNICAR;
                     string PASSWORD;
                     cout << "\nUNESITE SVOJE KORISNICKO IME: ";
@@ -940,101 +973,135 @@ int main() {
             //Sign in
             if (izborK == 2)
             {
-                    string KNJIZNICAR;
-                    string PASSWORD;
-                    string knjiznicar;
-                    string Password;
-                    string pass;
-                    int pokusaj = 0;
-                    while (pokusaj < 3) {
-                        system("cls");
-                        cout << "\n ---------- PRIJAVA KNJIZNICARA ---------- ";
-                        cout << "\n\n Upisite korisnicko ime: ";
-                        cin.ignore();
-                        getline(cin, knjiznicar);
-                        cout << "\n Upisite lozinku:";
-                        getline(cin, Password);
-                        datoteka.open("knjiznicar_prijava.bin", ios::binary | ios::in);
-                        datoteka.read((char*)&PASSWORD, sizeof(PASSWORD));
-                        system("cls");
-                        if (PASSWORD == Password) {
-                            int izbor = 0;
-                            while (izbor != 9)
+                string KNJIZNICAR;
+                string PASSWORD;
+                string knjiznicar;
+                string Password;
+                string pass;
+                int pokusaj = 0;
+                while (pokusaj < 3) {
+                    system("cls");
+                    cout << "\n ---------- PRIJAVA KNJIZNICARA ---------- ";
+                    cout << "\n\n Upisite korisnicko ime: ";
+                    cin.ignore();
+                    getline(cin, knjiznicar);
+                    cout << "\n Upisite lozinku:";
+                    getline(cin, Password);
+                    datoteka.open("knjiznicar_prijava.bin", ios::binary | ios::in);
+                    datoteka.read((char*)&PASSWORD, sizeof(PASSWORD));
+                    system("cls");
+                    if (PASSWORD == Password) {
+                        int izbor = 0;
+                        while (izbor != 9)
+                        {
+                            cout << "\n\n ---------- PRIJAVA KNJIZNICARA JE USPJESNA ----------";
+                            cout << "\n1. Dodaj knjigu";
+                            cout << "\n2. Pregled posudenih knjiga";
+                            cout << "\n3. Izlaz";
+                            cout << "\n\n Unesite svoj odabir : ";
+                            cin >> izbor;
+                            switch (izbor)
                             {
-                                cout << "\n\n ---------- PRIJAVA KNJIZNICARA JE USPJESNA ----------";
-                                cout << "\n1. Dodaj knjigu";
-                                cout << "\n2. Izbrisite knjigu";
-                                cout << "\n3. Izlaz";
-                                cout << "\n\n Unesite svoj odabir : ";
-                                cin >> izbor;
-                                switch (izbor)
-                                {
-                                case 1:
-                                    dodaj_knjigu();
-                                    break;
-                                case 2:
-                                    korisnik.open("posudba.bin", ios::binary | ios::out);
-                                    korisnik.read((char*)&knjiga, (sizeof(knjiga)));
-                                    korisnik.open("korisnik.bin", ios::binary | ios::in);
-                                    korisnik.read((char*)&kime, sizeof(kime));
-                                    korisnik >> kime;
-                                    korisnik.close();
-                                    cout << kime << " TRENUTNO IMA POSUDENU KNJIGU: " << knjiga << endl;
-                                    korisnik.close();
-                                    //knjiga = '\0';
-                                    sleep_for(seconds(2));
-                                    datoteka.close();
-                                    break;
-                                case 3:
-                                    exit(5);
-                                default:
-                                    cout << "\n\n NEVAZECI IZBOR. PRITISNITE BILO KOJU TIPKU DA NASTAVITE..";
+                            case 1:
+                                dodaj_knjigu();
+                                break;
+                            case 2:
+                                korisnik.open("posudba.bin", ios::binary | ios::out);
+                                korisnik.read((char*)&knjiga, (sizeof(knjiga)));
+                                korisnik.open("korisnik.bin", ios::binary | ios::in);
+                                korisnik.read((char*)&kime, sizeof(kime));
+                                korisnik >> kime;
+                                korisnik.close();
+                                cout << kime << " TRENUTNO IMA POSUDENU KNJIGU: " << knjiga << endl;
+                                korisnik.close();
+                                sleep_for(seconds(2));
+                                datoteka.close();
+                                break;
+                            case 3:
+                                exit(5);
+                            default:
+                                cout << "\n\n NEVAZECI IZBOR. PRITISNITE BILO KOJU TIPKU DA NASTAVITE..";
 
-                                }
-                                system("cls");
                             }
-                            datoteka.close();
+                            system("cls");
                         }
-                        else if (PASSWORD != Password) {
-                            cout << "KRIVI KORISNICKI PODATCI!" << endl;
-                            pokusaj++;
-                            cout << "\n";
-                            cout << "BROJ POKUSAJA " << pokusaj << " OD MOGUCIH 3" << endl;
-                            sleep_for(seconds(3));
-                            datoteka.close();
-                        }
-
+                        datoteka.close();
                     }
-                    cout << "RACUN JE BLOKIRAN!" << endl;
-                    sleep_for(seconds(2));
-                    datoteka.close();
-                    remove("knjiznicar_prijava.bin");
-                    blokiran_racun();
+                    else if (PASSWORD != Password) {
+                        cout << "KRIVI KORISNICKI PODATCI!" << endl;
+                        pokusaj++;
+                        cout << "\n";
+                        cout << "BROJ POKUSAJA " << pokusaj << " OD MOGUCIH 3" << endl;
+                        sleep_for(seconds(3));
+                        datoteka.close();
+                    }
+
+                }
+                cout << "RACUN JE BLOKIRAN!" << endl;
+                sleep_for(seconds(2));
+                datoteka.close();
+                remove("knjiznicar_prijava.bin");
+                blokiran_racun();
             }
 
-        }
 
-        //admin
-        if (izbor == 4) {
-            ifstream datoteka;
-            datoteka.open("knjiznicar_prijava.bin");
-            if (datoteka) {
-                cout << "DATOTEKA VEC POSTOJI" << endl;
-                cout << "\n";
-                cout << "VRACANJE NA POCETNI ZASLON" << endl;
-                sleep_for(seconds(1));
-                goto pocetak;
-            }
-            else {
-               
-            }
-        }
+            //admin
+            if (izbor == 4) {
+            admin:
+                int pokusaj = 0;
+                ifstream datoteka;
+                datoteka.open("knjiznicar_prijava.bin");
+                if (datoteka) {
+                    cout << "DATOTEKA VEC POSTOJI" << endl;
+                    cout << "\n";
+                    cout << "VRACANJE NA POCETNI ZASLON" << endl;
+                    sleep_for(seconds(1));
+                    goto pocetak;
+                }
+                else {
+                    string admin = "Ott3r";
+                    string pass;
+                    cout << "PRIJAVA ADMINISTRATORA" << endl;
+                    cout << "UPISITE LOZINKU: ";
+                    cin.ignore();
+                    getline(cin, pass);
+                    if (admin == pass) {
+                        cout << "VRACAM PODATKE" << endl;
+                        sleep_for(seconds(2));
+                        int i = 0;
+                        char load[26];
+                        while (i < 25)
+                        {
+                            system("cls");
+                            load[i++] = '#';
+                            load[i] = '\0';
 
-        //izlaz
-        if (izbor == 5)
-        {
-            cout << "POZDRAV!" << endl;
-            exit(5);
+                            printf("\n\nBRISANJE [%-25s]", load);
+                            remove("knjige.bin");
+                            sleep_for(milliseconds(100));
+                        }
+                        system("cls");
+                        printf("\n");
+                        fstream datoteka("knjiznicar_prijava.bin", ios::binary | ios::app);
+                        datoteka.close();
+                    }
+                    else if (admin != pass) {
+                        cout << "KRIVI KORISNICKI PODATCI!" << endl;
+                        pokusaj++;
+                        cout << "\n";
+                        cout << "BROJ POKUSAJA " << pokusaj << " OD MOGUCIH 3" << endl;
+                        sleep_for(seconds(3));
+                        datoteka.close();
+                    }
+
+                }
+            }
+
+            //izlaz
+            if (izbor == 5)
+            {
+                cout << "POZDRAV!" << endl;
+                exit(5);
+            }
         }
     }
-}
