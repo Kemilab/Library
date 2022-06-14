@@ -924,7 +924,7 @@ int main() {
         }
 
 
-        //admin
+        //knjiznicar
         if (izbor == 3)
         {
             int izborK;
