@@ -639,12 +639,10 @@ int main() {
                 korisnik.close();
                 korisnik.open("posudba.bin", ios::binary | ios::app);
                 korisnik.read((char*)&knjiga, sizeof(knjiga));
+                cout << "\n";
                 cout << "UPRAVO STE POSUDILI: " << knjiga << endl;
-                cout << "MOLIMO PRICEKAJTE: 3 sekundi";//popravi ispis
-                sleep_for(seconds(1));
-                cout << "                2 sekunde";
-                sleep_for(seconds(1));
-                cout << "                1 sekunde";
+                cout << "\n";
+                cout << "MOLIMO PRICEKAJTE";//popravi ispis
                 sleep_for(seconds(1));
                  goto meni;
                 
@@ -652,20 +650,20 @@ int main() {
             }
 
             //return
-            else if (Uizbor == 2)// NE RADI
+            else if (Uizbor == 2)
             {
                 knjiga = '\0';
                 char izbor;
                 system("cls");
                 korisnik.open("posudba.bin", ios::binary | ios::app | ios::in);
                 korisnik.read((char*)&knjiga, sizeof(knjiga));
-                cout << "Trenutno je posudjena: " << knjiga << endl;
+                cout << "TRENUTNO JE POSUDENA: " << knjiga << endl;
                 cout << "Zelite vratiti knjigu? (Y/N)" << endl;
                 korisnik.close();
                 while (1)
                 {
                     cin >> izbor;
-                    cout << "Upisali ste: " << izbor << "\n";
+                    cout << "UPISALI STE: " << izbor << "\n";
                     sleep_for(seconds(2));
                     izbor = tolower(izbor);
                     if (izbor == 'y')
@@ -801,10 +799,12 @@ int main() {
                     goto meni;
                 }
             }
+
+            //što je posuðeno
             else if (Uizbor == 4) {
                 korisnik.open("posudba.bin", ios::binary | ios::app);
                 korisnik.read((char*)&knjiga, (sizeof(knjiga)));
-                cout << "TRENUTNO JE POSUDZENO: " << knjiga << endl;
+                cout << "TRENUTNO JE POSUDENO: " << knjiga << endl;
                 korisnik.close();
                 //knjiga = '\0';
                 sleep_for(seconds(2));
@@ -812,23 +812,12 @@ int main() {
 
 
             }
-
                 //exit
-                else if (Uizbor == 5)
-                {
+            else if (Uizbor == 5)
+            {
                 continue;
-                }
-                
-                else if (Uizbor == 6){
-                    
-                korisnik.open("korisnik.bin", ios::binary | ios::in);
-                korisnik.read((char*)&kime, sizeof(kime);
-                cout << kime;
-
-                }
+            }
         }
-
-
 
         //Lybrarian
         if (izbor == 3)
@@ -919,6 +908,13 @@ int main() {
             }
      
         }
+
+        //admin
+        if (izbor == 4) {
+
+        }
+
+        //izlaz
             if (izbor == 5)
             {
               cout << "POZDRAV!" << endl;
