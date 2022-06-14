@@ -22,7 +22,7 @@ void posudbe() {
     datoteka.open("korisnik.bin", ios::binary | ios::app);
     datoteka.read((char*)&kime, sizeof(kime));
     korisnik.open("posudba.bin", ios::binary | ios::app);
-    cout << "Ucenik " << kime << " je posduio " << knjiga;
+    cout << "UCENIK " << kime << " JE POSUDIO " << knjiga;
     sleep_for(seconds(2));
     korisnik.close();
     datoteka.close();
@@ -34,56 +34,56 @@ void lista() {
     fstream datoteka("knjige.bin", ios::binary | ios::out);
 
     string p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50;
-    p1 = "1000 katastrofa";
-    p2 = "99 vrucih tragova";
-    p3 = "Crvena voda";
-    p4 = "Da Vincijev kod";
-    p5 = "Dr Dolittle";
-    p6 = "Duh u mocvari";
-    p7 = "Eko Eko";
-    p8 = "Europski rijecnik";
-    p9 = "Fahrenheit 451";
-    p10 = "Gegorov dnevnik";
-    p11 = "Gospodar prstenova : Dvije kule";
-    p12 = "Gospodar prstenova : Povratak kralja";
-    p13 = "Gospodar prstenova : Prstenova druzina";
-    p14 = "Gregorov dnevnik";
-    p15 = "Gung Ho";
-    p16 = "Harry Potter i Darovi smrti";
-    p17 = "Harry Potter i Kamen mudraca";
-    p18 = "Harry Potter i Odaja tajni";
-    p19 = "Harry Potter i Plameni pehar";
-    p20 = "Harry Potter i Princ miješane krvi";
-    p21 = "Harry Potter i Red feniksa";
-    p22 = "Harry Potter i Zatoceni Azkabana";
-    p23 = "Hotel Zagorje";
-    p24 = "Imperij";
-    p25 = "IT";
-    p26 = "Kako si";
-    p27 = "Knjiga svijeta";
-    p28 = "Koko I duhovi";
-    p29 = "Marvel i ostala cudesa";
-    p30 = "Moze jos";
-    p31 = "Narnija";
-    p32 = "Nora";
-    p33 = "Pale sam na svijetu";
-    p34 = "Pale sam na svijetu";
-    p35 = "Petar Pan";
-    p36 = "Point Blank";
-    p37 = "Poirot";
-    p38 = "Posljednji Stipancici";
-    p39 = "Putar I parizer";
-    p40 = "Star Wars : Gospodari Sitha";
-    p41 = "Star Wars : Krvna linija";
-    p42 = "Star Wars : Nasljednik carstva";
-    p43 = "Star Wars : Pala zvijezda";
-    p44 = "Star Wars : Tarkin";
-    p45 = "Star Wars : Thrawn";
-    p46 = "Susjed";
-    p47 = "Tisucu tragova";
-    p48 = "Velike bitke II.svjetskog rata";
-    p49 = "Zagonetni djecak";
-    p50 = "Zivotinjska farma";
+    p1 = "  1000 katastrofa";
+    p2 = "  99 vrucih tragova";
+    p3 = "  Crvena voda";
+    p4 = "  Da Vincijev kod";
+    p5 = "  Dr Dolittle";
+    p6 = "  Duh u mocvari";
+    p7 = "  Eko Eko";
+    p8 = "  Europski rijecnik";
+    p9 = "  Fahrenheit 451";
+    p10 = "  Gegorov dnevnik";
+    p11 = "  Gospodar prstenova : Dvije kule";
+    p12 = "  Gospodar prstenova : Povratak kralja";
+    p13 = "  Gospodar prstenova : Prstenova druzina";
+    p14 = "  Gregorov dnevnik";
+    p15 = "  Gung Ho";
+    p16 = "  Harry Potter i Darovi smrti";
+    p17 = "  Harry Potter i Kamen mudraca";
+    p18 = "  Harry Potter i Odaja tajni";
+    p19 = "  Harry Potter i Plameni pehar";
+    p20 = "  Harry Potter i Princ miješane krvi";
+    p21 = "  Harry Potter i Red feniksa";
+    p22 = "  Harry Potter i Zatoceni Azkabana";
+    p23 = "  Hotel Zagorje";
+    p24 = "  Imperij";
+    p25 = "  IT";
+    p26 = "  Kako si";
+    p27 = "  Knjiga svijeta";
+    p28 = "  Koko I duhovi";
+    p29 = "  Marvel i ostala cudesa";
+    p30 = "  Moze jos";
+    p31 = "  Narnija";
+    p32 = "  Nora";
+    p33 = "  Pale sam na svijetu";
+    p34 = "  Pale sam na svijetu";
+    p35 = "  Petar Pan";
+    p36 = "  Point Blank";
+    p37 = "  Poirot";
+    p38 = "  Posljednji Stipancici";
+    p39 = "  Putar I parizer";
+    p40 = "  Star Wars : Gospodari Sitha";
+    p41 = "  Star Wars : Krvna linija";
+    p42 = "  Star Wars : Nasljednik carstva";
+    p43 = "  Star Wars : Pala zvijezda";
+    p44 = "  Star Wars : Tarkin";
+    p45 = "  Star Wars : Thrawn";
+    p46 = "  Susjed";
+    p47 = "  Tisucu tragova";
+    p48 = "  Velike bitke II.svjetskog rata";
+    p49 = "  Zagonetni djecak";
+    p50 = "  Zivotinjska farma";
     datoteka.write((char*)&p1, sizeof(p1));
     datoteka.write((char*)&p2, sizeof(p2));
     datoteka.write((char*)&p3, sizeof(p3));
@@ -136,7 +136,7 @@ void lista() {
     datoteka.write((char*)&p50, sizeof(p50));
     datoteka.close();
 
-    cout << "Ucitavam dostupni popis knjiga\n" << endl;
+    cout << "UCITAVAMO DOSTUPNI POPIS KNJIGA\n" << endl;
     datoteka.open("knjige.bin", ios::binary | ios::in);
     datoteka.read((char*)&p1, sizeof(p1));
     cout << p1 << endl;
@@ -247,7 +247,7 @@ void dodaj_knjigu() {
     string knjiga;
     fstream datoteka("knjige.bin", ios::binary | ios::app);
     datoteka.open("knjige.bin", ios::binary | ios::app);
-    cout << "\nUnesite ime knjige: ";
+    cout << "\nUNESITE IME KNJIGE: ";
     cin.ignore();
     getline(cin, knjiga);
     datoteka.write((char*)&knjiga, sizeof(knjiga));
@@ -257,8 +257,8 @@ void dodaj_knjigu() {
 void blokiran_racun()//dodati oporavak baze tako da stvori datoteku za knjiznicara i da unese zadanu lozniku 1234 ili nešto
 {
    system("cls");
-   cout << "Vas racune je blokiran" << endl;
-   cout << "Za sigurnost sustava Vasi podatci ce biti izbrisani" << endl;
+   cout << "VAS RACUN JE BLOKIRAN" << endl;
+   cout << "ZA SIGURNOST SUSTAVA VASI PODATCI CE BITI IZBRISANI" << endl;
    sleep_for(seconds(3));
    int i = 0;
    char load[26];
@@ -274,7 +274,7 @@ void blokiran_racun()//dodati oporavak baze tako da stvori datoteku za knjiznica
    }
    system("cls");
    printf("\n");
-   cout << "Za nastavak pozovite administratora:";
+   cout << "ZA NASTAVAK POZOVITE ADMINISTRATORA:";
 }
 void knjiz()
 {
@@ -282,18 +282,17 @@ void knjiz()
     while (izbor != 9)
     {
         kmeni:
-        cout << "\n\n Prijava knjiznicara je uspjesna !!";
+        cout << "\n\n ---------- PRIJAVA KNJIZNICARA JE USPJESNA ----------";
         cout << "\n1. Dodaj knjigu";
         cout << "\n2. Azurirajte knjigu";
         cout << "\n3. Izbrisite knjigu";
-        cout << "\n4. Lista svih knjiga";
-        cout << "\n9. Izlaz";
+        cout << "\n4. Izlaz";
         cout << "\n\n Unesite svoj odabir : ";
         cin >> izbor;
         switch (izbor)
         {
         case 1:
-            dodaj_knjigu(); //radi ali ne ispisuje, koga boli briga
+            dodaj_knjigu();
             break;
         case 2:
             lista();
@@ -302,10 +301,9 @@ void knjiz()
             posudbe();
             break;
         case 4:
-            // listOfAllBooks();
-            break;
+            exit(5);
         default:
-            cout << "\n\n Nevazeci izbor. Pritisnite bilo koju tipku da nastavite..";
+            cout << "\n\n NEVAZECI IZBOR. PRITISNITE BILO KOJU TIPKU DA NASTAVITE..";
             
         }
         system("cls");
@@ -317,56 +315,56 @@ int main() {
     fstream datoteka("knjige.bin", ios::binary | ios::out);
 
     string p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50;
-    p1 = "1000 katastrofa";
-    p2 = "99 vrucih tragova";
-    p3 = "Crvena voda";
-    p4 = "Da Vincijev kod";
-    p5 = "Dr Dolittle";
-    p6 = "Duh u mocvari";
-    p7 = "Eko Eko";
-    p8 = "Europski rijecnik";
-    p9 = "Fahrenheit 451";
-    p10 = "Gegorov dnevnik";
-    p11 = "Gospodar prstenova : Dvije kule";
-    p12 = "Gospodar prstenova : Povratak kralja";
-    p13 = "Gospodar prstenova : Prstenova druzina";
-    p14 = "Gregorov dnevnik";
-    p15 = "Gung Ho";
-    p16 = "Harry Potter i Darovi smrti";
-    p17 = "Harry Potter i Kamen mudraca";
-    p18 = "Harry Potter i Odaja tajni";
-    p19 = "Harry Potter i Plameni pehar";
-    p20 = "Harry Potter i Princ miješane krvi";
-    p21 = "Harry Potter i Red feniksa";
-    p22 = "Harry Potter i Zatoceni Azkabana";
-    p23 = "Hotel Zagorje";
-    p24 = "Imperij";
-    p25 = "IT";
-    p26 = "Kako si";
-    p27 = "Knjiga svijeta";
-    p28 = "Koko I duhovi";
-    p29 = "Marvel i ostala cudesa";
-    p30 = "Moze jos";
-    p31 = "Narnija";
-    p32 = "Nora";
-    p33 = "Pale sam na svijetu";
-    p34 = "Pale sam na svijetu";
-    p35 = "Petar Pan";
-    p36 = "Point Blank";
-    p37 = "Poirot";
-    p38 = "Posljednji Stipancici";
-    p39 = "Putar I parizer";
-    p40 = "Star Wars : Gospodari Sitha";
-    p41 = "Star Wars : Krvna linija";
-    p42 = "Star Wars : Nasljednik carstva";
-    p43 = "Star Wars : Pala zvijezda";
-    p44 = "Star Wars : Tarkin";
-    p45 = "Star Wars : Thrawn";
-    p46 = "Susjed";
-    p47 = "Tisucu tragova";
-    p48 = "Velike bitke II.svjetskog rata";
-    p49 = "Zagonetni djecak";
-    p50 = "Zivotinjska farma";
+    p1 = "  1000 katastrofa";
+    p2 = "  99 vrucih tragova";
+    p3 = "  Crvena voda";
+    p4 = "  Da Vincijev kod";
+    p5 = "  Dr Dolittle";
+    p6 = "  Duh u mocvari";
+    p7 = "  Eko Eko";
+    p8 = "  Europski rijecnik";
+    p9 = "  Fahrenheit 451";
+    p10 = "  Gegorov dnevnik";
+    p11 = "  Gospodar prstenova : Dvije kule";
+    p12 = "  Gospodar prstenova : Povratak kralja";
+    p13 = "  Gospodar prstenova : Prstenova druzina";
+    p14 = "  Gregorov dnevnik";
+    p15 = "  Gung Ho";
+    p16 = "  Harry Potter i Darovi smrti";
+    p17 = "  Harry Potter i Kamen mudraca";
+    p18 = "  Harry Potter i Odaja tajni";
+    p19 = "  Harry Potter i Plameni pehar";
+    p20 = "  Harry Potter i Princ miješane krvi";
+    p21 = "  Harry Potter i Red feniksa";
+    p22 = "  Harry Potter i Zatoceni Azkabana";
+    p23 = "  Hotel Zagorje";
+    p24 = "  Imperij";
+    p25 = "  IT";
+    p26 = "  Kako si";
+    p27 = "  Knjiga svijeta";
+    p28 = "  Koko I duhovi";
+    p29 = "  Marvel i ostala cudesa";
+    p30 = "  Moze jos";
+    p31 = "  Narnija";
+    p32 = "  Nora";
+    p33 = "  Pale sam na svijetu";
+    p34 = "  Pale sam na svijetu";
+    p35 = "  Petar Pan";
+    p36 = "  Point Blank";
+    p37 = "  Poirot";
+    p38 = "  Posljednji Stipancici";
+    p39 = "  Putar I parizer";
+    p40 = "  Star Wars : Gospodari Sitha";
+    p41 = "  Star Wars : Krvna linija";
+    p42 = "  Star Wars : Nasljednik carstva";
+    p43 = "  Star Wars : Pala zvijezda";
+    p44 = "  Star Wars : Tarkin";
+    p45 = "  Star Wars : Thrawn";
+    p46 = "  Susjed";
+    p47 = "  Tisucu tragova";
+    p48 = "  Velike bitke II.svjetskog rata";
+    p49 = "  Zagonetni djecak";
+    p50 = "  Zivotinjska farma";
     datoteka.write((char*)&p1, sizeof(p1));
     datoteka.write((char*)&p2, sizeof(p2));
     datoteka.write((char*)&p3, sizeof(p3));
@@ -435,9 +433,9 @@ int main() {
         cout << "                       1 Prijava ucenika" << endl;
         cout << "                       2 Prijava profesora" << endl;
         cout << "                       3 Prijava knjiznicara" << endl;
-        cout << "                       4 prijava administratora" << endl;
+        cout << "                       4 Prijava administratora" << endl;
         cout << "                       5 Izlaz" << endl;
-        cout << "Odaberite opciju: ";
+        cout << "\nODABERITE OPCIJU: ";
         cin >> izbor;
 
         //Student
@@ -446,7 +444,7 @@ int main() {
             //student login
             system("cls");
             fstream korisnik("korisnik.bin", ios::binary | ios::out); //fstream korisnik("korisnik.bin", ios::binary | ios::app | ios::out);
-            cout << "Odabrali ste prijavu ucenika!" << endl;
+            cout << " ODABRALI STE PRIJAVU UCENIKA!" << endl;
             cout << "Upisite korisnicko ime: ";
             cin >> kime;
             korisnik.write((char*)&kime, sizeof(kime));
@@ -455,7 +453,7 @@ int main() {
             korisnik.read((char*)&kime, sizeof(kime));
             korisnik >> kime;
             korisnik.close();
-            cout << "Pozdrav! " << kime << "\nKreiram potrebne datoteke!" << "!\n" << endl;
+            cout << "POZDRAV! " << kime << "\nKREIRAMO POTREBNE DATOTEKE!" << "!\n" << endl;
             cout << '-' << flush;
             for (;;) {
                 Sleep(100);
@@ -514,14 +512,14 @@ int main() {
             //meni
             meni:
             system("cls");
-            cout << "\nOdaberite jednu od sljedecih opcija: " << endl;
+            cout << "\n ---------- ODABERITE JEDNU OD SLJEDECIH OPCIJA ---------- " << endl;
             cout << "1 Posudba knjige" << endl;
             cout << "2 Povratak knjige" << endl;
             cout << "3 Popis knjiga" << endl;
             cout << "4 Pregled posudenih knjiga" << endl; // nije implementirano
             cout << "5 Izlaz" << endl;
             cout << "\n";
-            cout << "Unos: ";
+            cout << "UNOS: ";
             cin >> Uizbor;
 
             //borrow
@@ -529,7 +527,7 @@ int main() {
             {
                 int  posudba;
                 system("cls");
-                cout << "Ucitavam dostupni popis knjiga\n" << endl;
+                cout << "UCITAVAMO DOSTUPNI POPIS KNJIGA\n" << endl;
                 datoteka.open("knjige.bin", ios::binary | ios::in);
                 datoteka.read((char*)&p1, sizeof(p1));
                 cout << p1 << endl;
@@ -634,23 +632,23 @@ int main() {
                 datoteka.close();
 
                 korisnik.open("posudba.bin", ios::binary | ios::app);
-                cout << "\nUnesite ime knjige: ";
+                cout << "\nUNESITE IME KNJIGE: ";
                 cin.ignore();
                 getline(cin, knjiga);
                 korisnik.write((char*)&knjiga, sizeof(knjiga));
                 korisnik.close();
                 korisnik.open("posudba.bin", ios::binary | ios::app);
                 korisnik.read((char*)&knjiga, sizeof(knjiga));
-                cout << "Upravo ste posudlil: " << knjiga << endl;
-                cout << "Molimo pricekajte: 5 sekundi";//popravi ispis
+                cout << "UPRAVO STE POSUDILI: " << knjiga << endl;
+                cout << "MOLIMO PRICEKAJTE: 5 sekundi";//popravi ispis
                 sleep_for(seconds(1));
-                cout << "                   4 sekunde";
+                cout << "                4 sekunde";
                 sleep_for(seconds(1));
-                cout << "                   3 sekunde";
+                cout << "                3 sekunde";
                 sleep_for(seconds(1));
-                cout << "                   2 sekunde";
+                cout << "                2 sekunde";
                 sleep_for(seconds(1));
-                cout << "                   1 sekunde";
+                cout << "                1 sekunde";
                 sleep_for(seconds(1));
                  goto meni;
                 
@@ -696,7 +694,7 @@ int main() {
             else if (Uizbor == 3)
             {
                 system("cls");
-                cout << "Ucitavam dostupni popis knjiga\n" << endl;
+                cout << "UCITAVAMO DOSTUPNI POPIS KNJIGA\n" << endl;
                 datoteka.open("knjige.bin", ios::binary | ios::in);
                 datoteka.read((char*)&p1, sizeof(p1));
                 cout << p1 << endl;
@@ -799,7 +797,7 @@ int main() {
                 datoteka.read((char*)&p50, sizeof(p50));
                 cout << p50 << endl;
                 datoteka.close();
-                cout << "\nUnesite Y za nastavak: ";
+                cout << "\nUNESITE Y ZA NASTAVAK: ";
                 char Ulazy;
                 cin >> Ulazy;
                 if (Ulazy == 'y')
@@ -810,7 +808,7 @@ int main() {
             else if (Uizbor == 4) {
                 korisnik.open("posudba.bin", ios::binary | ios::out);
                 korisnik.read((char*)&knjiga, (sizeof(knjiga)));
-                cout << "Trenutno je posudeno: " << knjiga << endl;
+                cout << "TRENUTNO JE POSUDZENO: " << knjiga << endl;
                 korisnik.close();
                 //knjiga = '\0';
                 sleep_for(seconds(2));
@@ -841,7 +839,7 @@ int main() {
             string Password;
             cout << "1 Registracija" << endl;
             cout << "2 Prijava" << endl;
-            cout << "Odabire radnju: ";
+            cout << "\nODABERITE RADNJU: ";
             cin >> izborK;
             //Options for libraryan
             //Sign up
@@ -851,9 +849,9 @@ int main() {
                 ifstream datoteka;
                 datoteka.open("knjiznicar_prijava.bin");
                     if (datoteka) {
-                        cout << "Datoteka vec postoji" << endl;
+                        cout << "DATOTEKA VEC POSTOJI" << endl;
                         cout << "\n";
-                        cout << "Vracanje na registraciju" << endl;
+                        cout << "VRACANJE NA REGISTRACIJU" << endl;
                         sleep_for(seconds(1));
                     }
                     else {
@@ -889,7 +887,7 @@ int main() {
                 int pokusaj = 0;
                 while(pokusaj < 3){
                 system("cls");
-                cout << "\n ---------- Prijava knjiznicara -------";
+                cout << "\n ---------- PRIJAVA KNJIZNICARA ---------- ";
                 cout << "\n\n Upisite korisnicko ime: ";
                 cin.ignore();
                 getline(cin, knjiznicar);
@@ -902,10 +900,10 @@ int main() {
                     datoteka.close();
                 }
                 else if (PASSWORD != Password) {
-                    cout << "Krivi korisnicki podatci!" << endl;
+                    cout << "KRIVI KORISNICKI PODATCI!" << endl;
                     pokusaj++;
                     cout << "\n";
-                    cout << "Broj pokusaja " << pokusaj << " od mogucih 3" << endl;
+                    cout << "BROJ POKUSAJA " << pokusaj << " OD MOGUCIH 3" << endl;
                     sleep_for(seconds(3));
                     datoteka.close();
                 }
@@ -922,7 +920,7 @@ int main() {
         }
             if (izbor == 5)
             {
-              cout << "Pozdrav!" << endl;
+              cout << "POZDRAV!" << endl;
               exit(5);
             }
     }
