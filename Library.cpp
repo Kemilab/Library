@@ -23,8 +23,8 @@ void posudbe() {
     cout << "Ucenik " << kime << " je posduio " << knjiga;
     sleep_for(seconds(2));
     korisnik.close();
-    korisnik.close();sss
-    goto k_meni;
+    korisnik.close();
+   
 
 }
 
@@ -279,7 +279,7 @@ void knjiz()
     int izbor = 0;
     while (izbor != 9)
     {
-        k_meni:
+        kmeni:
         cout << "\n\n Prijava knjiznicara je uspjesna !!";
         cout << "\n1. Dodaj knjigu";
         cout << "\n2. Azurirajte knjigu";
